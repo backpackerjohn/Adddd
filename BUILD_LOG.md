@@ -26,7 +26,7 @@ Execute `ADHD app instructions. .md` end-to-end: hunt a real, evidence-backed AD
 
 | Phase | Status | Evidence |
 |-------|--------|----------|
-| 1. Pain-point hunt | in progress | research/ |
+| 1. Pain-point hunt | DONE (10:04 UTC) | research/pain-points.md — 12 researchers, 64 findings, 235 sourced quotes, 12 clusters, 8 skeptic verdicts (6 survived, 2 refuted-as-compound) |
 | 2. Competing teams formed | pending | contest/ |
 | 3. Rival theses | pending | contest/theses/ |
 | 4. Product contest | pending | contest/judging.md |
@@ -47,4 +47,5 @@ Execute `ADHD app instructions. .md` end-to-end: hunt a real, evidence-backed AD
 ## Decisions
 
 - D1 (setup): Repo layout = research/, contest/, product/, design/, redteam/, ops/, with recap.html at root as the hub. Rationale: mirrors the 12-phase arc; a stranger can navigate top-down.
+- D3 (contest, 10:15 UTC): First contest workflow launch had a bug — I passed a placeholder instead of the evidence payload, so the script's judging phase would have crashed on undefined data. Caught it immediately, stopped the run (task wsunz1opk), patched the script so every agent Reads `research/raw/contest-input.json` from the repo instead of receiving inline JSON, and relaunched (run wf_7ac254b4-7f3). Benefit: repo file is now the single source of truth for contest inputs.
 - D2 (evidence): Maintain research/evidence-ledger.md mapping every load-bearing claim → URL → quote → verification status. Skeptic agents re-fetch URLs before the thesis is accepted. Rationale: guardrail 3 makes fabrication the biggest failure mode of a multi-agent build.
