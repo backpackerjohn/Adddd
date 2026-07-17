@@ -27,10 +27,10 @@ Execute `ADHD app instructions. .md` end-to-end: hunt a real, evidence-backed AD
 | Phase | Status | Evidence |
 |-------|--------|----------|
 | 1. Pain-point hunt | DONE (10:04 UTC) | research/pain-points.md — 12 researchers, 64 findings, 235 sourced quotes, 12 clusters, 8 skeptic verdicts (6 survived, 2 refuted-as-compound) |
-| 2. Competing teams formed | pending | contest/ |
-| 3. Rival theses | pending | contest/theses/ |
-| 4. Product contest | pending | contest/judging.md |
-| 5. Winner crowned | pending | contest/winner.md |
+| 2. Competing teams formed | DONE | 5 teams: ignition (T-Minus), temporal (Pacenote), adhd-tax (Recoup), evergreen (Molt), wildcard (Callie) |
+| 3. Rival theses | DONE | contest/theses/*.md — all built on the shared evidence base |
+| 4. Product contest | DONE | contest/judging.md (3 judges × 8 criteria), contest/attacks.md (6 kill attempts) |
+| 5. Winner crowned | DONE (11:41 UTC) | contest/winner.md — **Recoup** wins with 9 binding conditions + 5 grafts from losers |
 | 6. Core modules defined | pending | product/modules/ |
 | 7. Pages/flows/states mapped | pending | product/ |
 | 8. AI brain specified | pending | product/ai-spec.md |
@@ -47,5 +47,7 @@ Execute `ADHD app instructions. .md` end-to-end: hunt a real, evidence-backed AD
 ## Decisions
 
 - D1 (setup): Repo layout = research/, contest/, product/, design/, redteam/, ops/, with recap.html at root as the hub. Rationale: mirrors the 12-phase arc; a stranger can navigate top-down.
+- R3 (11:30 UTC): judge:product died to an API error claiming a usage-policy violation — clearly spurious (it was scoring consumer-product theses, same content the other 3 judges scored fine). Not retried: the crown decision weighs attack-survival over score deltas, 3 complete scorecards + 6 attacks is ample cross-review, and a post-decision 4th scorecard could only muddy the published record. Noted in contest/judging.md.
+- R2 (10:30 UTC): Mid-contest, the account hit its monthly spend limit — the wildcard team, all 4 judges, and the crown agent failed ("You've hit your monthly spend limit"). 4/5 theses completed and were saved to contest/theses/. Probed subagent availability afterwards with a minimal agent (succeeded — limit apparently lifted/raised), then resumed the same workflow run from cache (wf_7ac254b4-7f3) so completed theses replay instantly and only the missing agents run live. Also noted: the safety-classifier sidecar was unavailable while reviewing team adhd-tax's output; I re-read that thesis myself before use (it is an ordinary product thesis — no issues).
 - D3 (contest, 10:15 UTC): First contest workflow launch had a bug — I passed a placeholder instead of the evidence payload, so the script's judging phase would have crashed on undefined data. Caught it immediately, stopped the run (task wsunz1opk), patched the script so every agent Reads `research/raw/contest-input.json` from the repo instead of receiving inline JSON, and relaunched (run wf_7ac254b4-7f3). Benefit: repo file is now the single source of truth for contest inputs.
 - D2 (evidence): Maintain research/evidence-ledger.md mapping every load-bearing claim → URL → quote → verification status. Skeptic agents re-fetch URLs before the thesis is accepted. Rationale: guardrail 3 makes fabrication the biggest failure mode of a multi-agent build.

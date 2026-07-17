@@ -1,0 +1,144 @@
+{
+ "team": "wildcard",
+ "product_name": "Callie \u2014 \"the assistant who calls first\"",
+ "one_liner": "A proactive voice agent that phones you at the transition moments of your day \u2014 to get you started, guard your appointments so the afternoon is yours again, and pull you out of hyperfocus \u2014 with no app to open, no list to maintain, and nothing that can pile up and shame you.",
+ "target_user": "Maya, 34: a late-diagnosed remote/hybrid knowledge worker \u2014 squarely in the post-2020 surge cohort (new ADHD diagnoses among women 23-49 nearly doubled 2020-2022, per Epic Research). She has a calendar of afternoon meetings that each vaporize the hours before them, a graveyard of abandoned systems (Notion weekend-builds, Todoist with 87 red tasks, three paper planners), and she has TRIED the category: she installed Dubbii and booked two Focusmate sessions \u2014 but at the actual moment of freeze she could not make herself open the app or book the session, because opening the app IS the initiation act that's offline. She doesn't need another tool to operate. She needs something that operates on her schedule whether or not she shows up \u2014 the function currently performed, badly and at relationship cost, by her husband saying \"...or closer to 20 minutes.\"",
+ "winning_problem": [
+  "Task Initiation Paralysis (\"I know exactly what to do and cannot start\")",
+  "Waiting Mode: One Appointment Paralyzes the Whole Day",
+  "Hyperfocus Exit Failure & Painful Transitions",
+  "Time Blindness: Broken Duration Estimates, Chronic Lateness, Missed Appointments",
+  "The Meta-Problem: Every Coping Tool Stops Working (as the binding design constraint, not the pitch)"
+ ],
+ "product_concept": "Callie is not an app you open. It is a phone number saved in your contacts that calls YOU, three to five times a day, at the transition moments where ADHD days break: the morning launch, the start of the dreaded task, the run-up to the appointment, the exit from hyperfocus. Every existing product in this market \u2014 including the incumbents the skeptics correctly used to knock down the anchored clusters' \"underserved\" scores \u2014 is pull-based: Dubbii requires opening Dubbii while frozen, Focusmate requires having scheduled Focusmate, Tiimo requires trusting a timer you configured yourself. The research's single strongest cross-cluster insight is that \"every fix requires deploying the fix with the exact faculty that is offline.\" Callie inverts the interaction model: the product self-deploys. You never initiate anything, including the product.\n\nA day with Callie: at 7:30pm, a 90-second call \u2014 \"How'd today go? What are the two things tomorrow, and when's your appointment?\" You talk; Callie listens, reads your Google Calendar, and builds tomorrow's three anchors. No typing, no app, no list. At 8:15am, the launch call: not an alarm but a conversation \u2014 \"You said the grant report first. Don't open email. Stay on the line with me: open the doc, read me the first heading.\" This is micro body-doubling delivered as an inbound call, attacking the exact slice the Cluster-1 verdict left open (\"spontaneous, in-the-moment freeze rescue with no self-initiation required\"). At 11am Callie makes the waiting-mode promise: \"Your 2pm is mine. I will call you at 1:20 and again at 1:35 if you don't pick up, and there's a dumb hardware-grade alarm behind me if I somehow die. The next three hours belong to you.\" This is the \"trusted external time-guardian\" the Cluster-6 verdict says nobody occupies \u2014 Healthline's \"an appointment at 4 p.m. feels like a day-long obligation\" is a trust problem, and trust is built by a guarantee, not another self-set timer. At 1:20 the guardian call comes with a get-ready escort calibrated to your measured, not stated, prep time (you say 5 minutes; Callie has learned it's 20 \u2014 the ADDitude husband-corrects-wife pattern, automated and de-shamed). At 10:30pm, if you opted in, the exit call: \"You said you wanted to stop at 10. Want to park it? Tell me where you are in it and I'll read it back to you tomorrow\" \u2014 making pausing feel safe by externalizing the mental thread, the fear the Cluster-7 research says makes stopping feel like \"ripping a phone charger out of the wall with your teeth.\"\n\nCrucially, Callie has no backlog. Intentions expire nightly. There is no task database, no streak, no overdue counter \u2014 the 87-red-tasks shame spiral and the broken-streak death (\"opened the app, saw the broken streak, closed the app, never opened it again\") are structurally impossible, not mitigated. When you ignore Callie, Callie treats it as data, not sin: declined calls train the timing/modality policy, and after a dark week you get one warm call \u2014 \"Want me to keep going, pause, or change how I show up?\" \u2014 with billing auto-paused, not silently collected.",
+ "core_loop": "1) EVENING ANCHOR CALL (90 sec, ~7:30pm): Callie calls; you talk through tomorrow \u2014 two intentions plus calendar events. LLM extracts anchors from rambly speech. Nothing written by you, ever. 2) MORNING LAUNCH CALL: inbound call at your chosen window; conversational negotiation of the first physical action (\"stand up while we talk; what's the first domino?\"); stays on the line through the start if you want \u2014 synchronous micro body-doubling. 3) WAITING-MODE GUARANTEE: for any calendar event, Callie states the contract out loud (\"the 2pm is mine; I call at 1:20\") and the pre-event hours are explicitly released back to you. 4) GUARDIAN CALL at T-minus-(your real prep time, learned from observed history, not your estimate): escorts you through leaving. 5) OPTIONAL EXIT CALL at night: parks the hyperfocus thread verbally, reads it back tomorrow. 6) ADAPTATION TICK: every declined/ignored call updates a per-user contact policy (time-of-day, call vs SMS vs silence); once a week Callie says what it changed and why. 7) PANIC BUTTON (non-AI, always identical): text \"NOW\" or tap one widget \u2192 Callie calls you within 60 seconds for an unscheduled freeze rescue. The loop's output each day is exactly zero artifacts: no list to groom, no state to maintain, no debt to face.",
+ "why_ai_is_essential": "Three load-bearing AI functions, each of which breaks without LLMs. (1) Real-time negotiation of a freeze state: a frozen person who says \"I can't\" to a scripted IVR gets a re-prompt; with a realtime voice LLM they get a genuine counter-move (\"okay, don't do the report \u2014 just tell me what the first sentence would say\"). The intervention IS a conversation, and conversation cannot be pre-recorded \u2014 this is why Dubbii ships fixed videos and why the human version of this product (a PA, a parent, a spouse) costs $100+/hr as an ADHD coach or a marriage. (2) Speech-to-structure with zero user maintenance: the evening call replaces the entire setup/curation burden that kills systems (\"maintaining it requires more executive function than actually doing the tasks... within two weeks the system collapses\" \u2014 FocusHack). Extracting anchors, times, and emotional temperature from 90 seconds of rambling is exactly LLM territory; without it you're back to a form, and the form is the product's death. (3) Generative variability and learned personalization: every call is composed fresh \u2014 different words, angle, prosody \u2014 because habituation is to sameness; and the agent's model of YOU (your real prep times vs stated ones, which negotiation moves actually get you off the couch, when you answer) makes month-3 calls better than week-1 calls. Pre-LLM, this product was literally impossible at consumer price: real-time, warm, context-aware voice conversation initiated by a machine did not exist at any price until ~2024, and the only substitute was a human being. What breaks without AI: the calls become robocalls, robocalls become alarms, and alarms are the precise thing the research says goes invisible \"within weeks, sometimes days.\"",
+ "non_ai_features": [
+  "The deterministic dead-man alarm chain: every guaranteed event is backed by a plain cron-scheduled telephony ring + SMS that fires even if every LLM in the stack is down. The waiting-mode promise is a trust product; trust cannot depend on model uptime, so the guarantee layer is deliberately dumb.",
+  "The panic button: one hardcoded widget/SMS keyword ('NOW') that always does the same thing \u2014 Callie calls within 60 seconds. At the moment of freeze, zero novelty and zero choices is the correct UX; AI would add decision surface exactly where decisions are impossible.",
+  "Plain phone-call delivery via ordinary telephony from a saved contact: rings punch through notification-blindness because they use the OS's un-swipeable full-screen call surface and carry social answer-reflex \u2014 a channel decision, not an AI feature.",
+  "The no-backlog data schema: intentions hard-expire after 24 hours by database design. Forgiveness enforced by schema, not by a model choosing to be nice.",
+  "Billing ethics as policy code: auto-pause of the subscription after 21 days of non-engagement, cancellation effective immediately by saying 'cancel' in any call or texting one word, trial-end reminder call. These are if-statements, deliberately kept out of AI hands.",
+  "Calendar ingestion via standard Google Calendar OAuth / ICS read \u2014 boring, reliable, reviewable."
+ ],
+ "anti_habituation_design": "Cluster 2 is treated as the physics of this market, and the skeptic's correction is respected: the 70%-in-100-days cliff (JMIR 2024, n=525,824) is population-general, Duolingo already does adaptive ignore-detection, and 'ADHD-friendly forgiving app' is saturated POSITIONING. So Callie's survival case rests on mechanics, not messaging: (1) MODALITY: you cannot reflex-swipe a conversation. Alarm habituation is habituation to an identical one-way stimulus; an inbound call from a known contact demands a social response and each one has different content. This is an inference, not a proven fact \u2014 it is listed as a riskiest assumption and is the first thing the week-1 pilot measures. (2) VARIABILITY ENGINE: no two calls are ever the same words; script sameness is the habituation substrate and generative composition removes it by construction. (3) IGNORE-DETECTION BANDIT, stolen openly from Duolingo's published sleeping-bandit system (KDD 2020): declined/unanswered calls retrain per-user timing and modality, and \u2014 like Duolingo's self-silencing reminders \u2014 Callie says it out loud: 'morning calls aren't landing; I'm switching to a 9:40 text this week.' The tool notices it is being ignored, which the research shows no task/reminder product does. (4) NOTHING CAN ROT: the two documented app-killers \u2014 87 overdue tasks (Thawly) and the broken streak (Medium, 10-tracker essay) \u2014 require accumulated state; Callie's nightly-expiry schema means week 6 looks identical to day 1: an empty slate and a phone that rings. There is no shameful thing to open because there is nothing to open. (5) VALUE THAT COMPOUNDS AGAINST NOVELTY DECAY: by week 6 Callie knows your true prep-time error, your answerable hours, and which moves unfreeze you \u2014 the product gets better exactly when novelty gets worse, inverting the decay curve instead of fighting it. (6) GRACEFUL DORMANCY + RE-ONBOARDING: after 7 dark days, one warm no-guilt call offering keep/pause/change; billing auto-pauses at 21 days. Lapse-and-return is designed as a normal orbit, not churn. (7) The contradiction-ledger's own reconciliation ('apps that are simple, guilt-free, and require no maintenance retain ADHD users far better; the abandonment curve is a design outcome, not destiny') is the product spec: Callie has literally zero maintenance surface.",
+ "competitors": [
+  {
+   "name": "Dubbii (500k+ users, ADHD Love)",
+   "url": "https://www.dubbii.app/",
+   "gap": "Follow-along body-doubling videos are pull-based and pre-recorded: the frozen user must open the app and pick a video with the exact faculty that's offline, and a video cannot respond to 'I can't.' Callie is inbound and conversational."
+  },
+  {
+   "name": "Focusmate / Flow Club",
+   "url": "https://www.focusmate.com/",
+   "gap": "Externalize the start trigger only for sessions you scheduled in advance ($8-29/mo); no spontaneous freeze rescue, no calendar context, no waiting-mode guarantee, and booking is itself an initiation task."
+  },
+  {
+   "name": "Tiimo (Apple 2025 App of the Year)",
+   "url": "https://www.tiimoapp.com/",
+   "gap": "Content-markets against waiting mode but sells self-configured visual timers \u2014 the precise instrument the root-cause analysis says sufferers distrust after past misses. Notifications, not guarantees."
+  },
+  {
+   "name": "BugMe (escalating alarms)",
+   "url": "https://trybugme.com/",
+   "gap": "12-tier screen-takeover alarms make the stimulus louder, not smarter: still one-way, still identical, still swipe-able at tier 1, and escalating annoyance accelerates deletion rather than retention."
+  },
+  {
+   "name": "Google/Apple 'Time to Leave' (free, pre-installed)",
+   "url": "https://support.google.com/maps/answer/6149565",
+   "gap": "Corrects travel time against live traffic but delivers it as a silent notification \u2014 the single most habituated channel \u2014 and corrects traffic, not YOUR personal prep-time delusion, and offers nothing for initiation, waiting mode, or exit."
+  },
+  {
+   "name": "Human ADHD coaches / the unpaid spouse",
+   "url": "https://www.adhdmarriage.com/content/he-forgets-everything",
+   "gap": "The true incumbent. Coaches cost $100+/hr and aren't there at 8:15am Tuesday; the spouse-as-executive-function is exactly the marriage-eroding pattern the research documents. Callie is the $25/mo, no-resentment version."
+  },
+  {
+   "name": "Lunatask / Finch / no-streak trackers",
+   "url": "https://lunatask.app/adhd",
+   "gap": "Sell 'forgiving' as positioning inside a pull-based app; the user must still show up to the tool daily, so forgiveness only softens the crash rather than removing the showing-up requirement."
+  }
+ ],
+ "business_model": "$25/month flat (deliberately under Flow Club's $29 and roughly 1/20th of one hour of human coaching), 14-day full-feature trial. Unit economics work because the product is telephony + realtime voice LLM: ~4 conversational minutes/day \u2248 120 min/month \u2248 $8-12 COGS at current realtime-voice API pricing, leaving real margin at $25 with costs falling every quarter. The model is engineered against the ADHD-tax trap the research documents ('subscription pricing and cancellation flows that monetize ADHD forgetfulness'): (1) billing AUTO-PAUSES after 21 days of no answered calls \u2014 we structurally cannot earn zombie revenue, which also forces the company to optimize for genuine engagement rather than forgetting; (2) cancel by saying 'cancel' during any call or texting one word \u2014 effective immediately, no flow; (3) trial end is announced by a call, not a silent card charge; (4) no annual prepay offered until we can show week-26 retention \u2014 selling a year upfront to a population with a documented 100-day cliff is the ADHD tax in a party hat. No ads, no data resale: the agent's knowledge of your worst moments is the product's trust core. Expansion revenue later: a consented household tier (partner can hand Callie a request \u2014 'the forms are due Friday' \u2014 so the agent nags instead of the spouse), priced per household, which monetizes the dyad without making the partner the police.",
+ "month_one_scope": "Ships in 30 days (2-3 engineers, no native app \u2014 that's the trick): a phone-number product. Web onboarding (5 minutes, done once, with a human-sounding welcome call to seed the contact card), Google Calendar OAuth, Twilio Voice + realtime voice LLM pipeline, and four call types: evening anchor call, morning launch call, waiting-mode guarantee + guardian call with the deterministic dead-man backup, and the NOW panic line. SMS fallback for every call. Adaptation v0 is rules, not a bandit (answered/declined shifts windows and modality). Stripe with the auto-pause policy live from day one. Success metric for the 50-user pilot: answered-call rate at week 6 vs week 1, and 'appointments made without losing the morning' self-report. Deliberately NOT in month one: hyperfocus auto-detection via screen-time signals (needs device APIs and a native app), the learned prep-time-error model beyond simple observed averages, partner/household tier, Android/iOS apps, the nightly exit call (added in month two once call-answer behavior is characterized), any memory-of-you deeper than 30 days.",
+ "riskiest_assumptions": [
+  "People with ADHD will ANSWER scheduled calls: phone-call aversion and call anxiety are real in this population and appear in the communication-debt cluster; if answer rates crater, the whole modality thesis fails. This is pilot-week-1's kill metric, with SMS-first as the tested fallback identity.",
+  "Conversation resists habituation better than tones: this is inference, not evidence \u2014 the 'ADHD brains habituate to alarms in days' claim traces only to a vendor SEO blog (AFFiNE), and no study compares habituation across modalities. Callie could become an ignorable ritual by week 8.",
+  "Realtime voice quality: if latency or prosody makes Callie feel like a robocall for even three seconds, the social answer-reflex flips to the spam-rejection reflex. The margin between 'caring assistant' and 'telemarketer' is the entire product.",
+  "The waiting-mode mechanism is unvalidated (contradiction #7): the fear/trust story implies a guarantee frees the day; the attentional-dominance story implies the event squats in working memory regardless of any promise. The Conversation confirms zero formal research. If dominance is the truth, the guardian call still gets you there on time but doesn't return the morning \u2014 halving that wedge's value.",
+  "Cluster 2 applies to us with full force despite the design: the 70%/100-day JMIR figure is population-general and every 'forgiving' competitor also believed design would save them; our retention advantage is a hypothesis until week-13 cohort data exists.",
+  "COGS discipline: heavy users (multiple panic calls + long negotiations daily) could blow past the $12 envelope; per-user minute budgets with graceful SMS degradation are untested UX.",
+  "Trust asymmetry: one missed guardian call \u2014 one LLM outage the dead-man chain doesn't fully cover \u2014 may permanently destroy the guarantee for that user, because the entire wedge is 'you can finally trust an external timekeeper.'"
+ ],
+ "evidence_citations": [
+  {
+   "claim": "Every existing initiation fix requires the frozen person to self-initiate the fix; the freeze is fully self-aware ('I want to do the work... it feels like pushing magnets')",
+   "url": "https://www.simplypsychology.org/adhd-paralysis.html"
+  },
+  {
+   "claim": "Skeptic verdict on Cluster 1: the genuinely open slice is 'spontaneous, in-the-moment freeze rescue with no self-initiation required' \u2014 Dubbii/Focusmate own only the scheduled/pull-based versions",
+   "url": "https://www.dubbii.app/"
+  },
+  {
+   "claim": "Waiting mode: 'An appointment at 4 p.m. doesn't feel like a 4 p.m. commitment; it feels like a day-long obligation'",
+   "url": "https://www.healthline.com/health/adhd/adhd-waiting-mode"
+  },
+  {
+   "claim": "'There currently is no research that specifically examines waiting mode' \u2014 unowned, unnamed clinically, worsened by calendar apps",
+   "url": "https://theconversation.com/do-you-lose-your-whole-day-to-one-appointment-waiting-mode-may-be-why-280608"
+  },
+  {
+   "claim": "Median 70% of users abandon health apps within 100 days (n=525,824) \u2014 the cliff every thesis must survive; note it is population-general, not ADHD-specific",
+   "url": "https://www.jmir.org/2024/1/e56897"
+  },
+  {
+   "claim": "Duolingo's sleeping-bandit notification system is the proven template for ignore-detection, adaptation, and self-silencing \u2014 no task/reminder product applies it",
+   "url": "https://research.duolingo.com/papers/yancey.kdd20.pdf"
+  },
+  {
+   "claim": "Accumulated-state shame kills apps: 87 overdue tasks \u2192 the app triggers shame \u2192 never opened again (vendor-authored source, flagged as such)",
+   "url": "https://thawly.ai/reviews/todoist-for-adhd"
+  },
+  {
+   "claim": "'Opened the app, saw the broken streak, closed the app, never opened it again' \u2014 streaks/backlogs are the documented death mechanism Callie's schema makes impossible",
+   "url": "https://medium.com/@wardtylerd/i-tested-10-habit-trackers-in-30-days-8-broke-me-the-same-way-9803ea20b228"
+  },
+  {
+   "claim": "Setup-heavy systems collapse in two weeks because maintenance costs more executive function than the tasks \u2014 hence zero-maintenance voice capture",
+   "url": "https://www.focushack.io/reviews/todoist-vs-notion-adhd/"
+  },
+  {
+   "claim": "Personal time-estimate error is systematic and currently corrected by spouses ('It'll take about five minutes' / '...or closer to 20 minutes, and he'd always be right')",
+   "url": "https://www.additudemag.com/time-blindness-running-late-adhd/"
+  },
+  {
+   "claim": "68% of ADHD adults report frequent hyperfocus with episodes lasting hours to days (small-n caveat per skeptic: ~50 subjects)",
+   "url": "https://www.cambridge.org/core/journals/european-psychiatry/article/hyperfocus-in-adhd-a-misunderstood-cognitive-phenomenon/1DE44A25A69E8CE17FBC720D26AC2230"
+  },
+  {
+   "claim": "Stopping a preferred activity feels physically painful; fear of losing the mental thread makes pausing unsafe \u2014 motivating the verbal thread-parking exit call",
+   "url": "https://carmenauthenticallyadhd.substack.com/p/stuck-between-tabs-audhd-transitions"
+  },
+  {
+   "claim": "Body doubling shows strong self-reported efficacy (85% task-completion improvement in a 220-person neurodivergent study; empirical evidence 'mixed' per arXiv)",
+   "url": "https://www.accountablo.com/blog/body-doubling-apps"
+  },
+  {
+   "claim": "The surge cohort exists and is the beachhead: new ADHD diagnoses among women 23-49 nearly doubled 2020-2022",
+   "url": "https://www.epicresearch.org/articles/number-of-adhd-patients-rising-especially-among-women/"
+  },
+  {
+   "claim": "15.5M US adults (6.0%) hold a current ADHD diagnosis; ~$2B ADHD-app market growing 12-17% CAGR with no dominant winner",
+   "url": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7340a1.htm"
+  },
+  {
+   "claim": "Spouse-as-external-executive-function erodes marriages ('I can write it, text it, say it, repeat it... completely forgotten within minutes') \u2014 the unpaid human incumbent Callie replaces",
+   "url": "https://www.adhdmarriage.com/content/he-forgets-everything"
+  },
+  {
+   "claim": "The 'faster alarm habituation in ADHD' claim is vendor-sourced only (AFFiNE SEO blog, no cited study) \u2014 treated as a design hypothesis to test, not a fact",
+   "url": "https://affine.pro/blog/setting-effective-reminders-adhd"
+  }
+ ],
+ "why_i_win": "The anchored teams are each fighting an incumbent for a slice; I'm claiming the whitespace the skeptics themselves drew, which happens to be one product. Read the four verdicts side by side: Cluster 1's residual gap is 'spontaneous, in-the-moment freeze rescue with no self-initiation required.' Cluster 6's is a 'trusted external time-guardian' because all existing timers are self-set instruments the user distrusts. Cluster 7's is staged, context-preserving exits rather than louder alarms. Cluster 3's is a 'closed-loop system that learns an individual's personal estimate-error... without requiring diligent manual use.' Four clusters, four skeptic-conceded gaps, one identical shape: an agent that initiates contact and carries the context, so the user never has to deploy a tool with the faculty that's broken. No anchored team can own that shape, because anchoring to one cluster forces them to build a destination \u2014 an app for initiation, an app for admin, an app for waiting mode \u2014 and every destination product, however forgiving its streaks, still requires the ADHD user to travel to it daily, which is precisely the behavior the JMIR cliff and the contradiction ledger say decays. The ADHD-tax team (the strongest anchored verdict at 0.8) is building a better Rocket Money and will win back real money \u2014 but bills are monthly; transitions are five times a day, and the daily-relationship product eventually absorbs the admin use case (Callie can escort you through opening the envelope) while Rocket Money can never absorb the 8:15am launch call. The waiting-mode team has the most charming wedge but a single-moment product resting on an unvalidated mechanism; for Callie, waiting mode is one call type among four, so if the fear/trust theory is wrong I lose a feature, not the company. And against Cluster 2 \u2014 the reef every thesis dies on \u2014 the anchored teams offer forgiving design inside the pull-based paradigm, which the market has already tried (Finch, Lunatask, Tody) without demonstrated retention outcomes; I'm the only thesis that removes the showing-up requirement itself. The bigger prize the others are leaving on the table is not a cluster at all: it's the interaction model. The first product that reliably shows up FOR the user becomes the relationship through which every other ADHD problem gets handled \u2014 and a relationship that compounds with time is the only asset in this market that novelty decay makes stronger, not weaker."
+}

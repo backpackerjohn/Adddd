@@ -1,0 +1,136 @@
+{
+ "team": "temporal",
+ "product_name": "Pacenote",
+ "one_liner": "A rally co-driver for your day: an AI time-guardian that takes legal-custody-level responsibility for your appointments, learns your personal time-estimation error from observed reality, and hands the hours between events back to you.",
+ "target_user": "Maya, 34, a hybrid-remote product manager diagnosed with ADHD at 31 \u2014 the exact cohort where new diagnoses nearly doubled 2020-2022 (women 23-49, Epic Research). She has a calendar-driven job with 2-6 meetings a day, a household, and money to spend. Her specific pattern: an afternoon dentist appointment vaporizes her whole morning (waiting mode); she tells her husband a drive takes 5 minutes when it takes 20 (ADDitude reader Natalie's exact quote); and twice a week she surfaces from a work or gaming hyperfocus hole having missed dinner or a call. She has already bought and abandoned Tiimo, a Time Timer, and Todoist. She does not need another planner \u2014 she needs something that watches the clock so she doesn't have to. She is NOT the unmedicated, unemployed, or crisis-stage user; Pacenote assumes a smartphone, a digital calendar, and a job worth being on time for.",
+ "winning_problem": [
+  "Waiting Mode: One Appointment Paralyzes the Whole Day (Cluster 6)",
+  "Time Blindness: Broken Duration Estimates, Chronic Lateness, Missed Appointments (Cluster 3)",
+  "Hyperfocus Exit Failure & Painful Transitions (Cluster 7)"
+ ],
+ "product_concept": "Pacenote is a phone app built on one metaphor: the rally co-driver. A rally driver takes blind corners at 100mph not because they can see the road, but because a trusted voice beside them is reading the pacenotes and has never once been wrong. Adults with ADHD have no internal pacenotes \u2014 the research's time family is one broken organ showing three symptoms: they cannot feel an appointment approaching (waiting mode), cannot feel duration (time blindness), and cannot feel elapsed time inside absorption (hyperfocus). Pacenote is the external organ. It connects to your existing calendar (no new system to build or maintain \u2014 this is the anti-abandonment bet), and for each 'anchor' event it performs an explicit CUSTODY HANDOFF: you tap 'Guardian engaged,' the event visually leaves your day, and a deterministic, unmissable escalation ladder \u2014 novel notification, full-screen takeover with fresh audio, and finally an actual telephone call that rings through silent mode \u2014 takes over the vigilance. The app shows you a running reliability receipt ('47 handoffs, 0 misses') because the skeptic-verified root cause of waiting mode is distrust of one's own alarms after past misses; trust is built with receipts, not promises.\n\nA day with it: at 8:40am Maya gets a 40-second brief. Her 3pm dentist appointment isn't shown as '3pm' \u2014 the LLM has decomposed its true cost (find insurance card, dress, 22-minute drive on live traffic, plus HER historically observed 12-minute leave-late error) into a leave-by of 2:19, and the day renders as what she actually has: 'You have 3h50m of protected open road before prep starts. Guardian engaged. Go.' The morning that used to be dead waiting-mode time is explicitly released, and the calendar goes quiet \u2014 the event is hidden from ambient view until T-minus, attacking the second hypothesized waiting-mode mechanism (attentional dominance) alongside the first (trust). At 2:12 the ladder starts gently; if she's deep in something, it escalates to the phone ringing at 2:19. She has learned, from receipts, that she is allowed to think about literally anything else until that phone rings.\n\nThe same organ works on the way out of absorption. When Maya arms a focus session (or, on Android, Pacenote passively notices a 3-hour single-app hole), it doesn't just interrupt \u2014 it stages a context-preserving exit: a 15-second voice brain-dump ('park the thread') that the LLM structures into a re-entry card waiting for her later ('you were about to check whether the API retries on 429'). The skeptic confirmed no product on the market does either automatic focus-hole detection or thread-parking; the fear of losing the mental thread is why pausing feels unsafe. And underneath everything runs the calibration loop: Pacenote silently logs planned-vs-actual (geofenced departure times, session lengths, snooze behavior) and corrects future plans automatically \u2014 it never asks Maya to review a dashboard. Google Maps corrects for traffic; nothing corrects for Maya. That personal error model is the compounding asset: the app is more accurate in week 6 than week 1, which is the exact inversion of the novelty cliff that kills every other ADHD tool.",
+ "core_loop": "1) MORNING BRIEF (40 sec, push or open): the day renders as a horizon bar \u2014 anchor events with LLM-computed true cost (prep steps + live travel + personal error buffer) and, more importantly, the green 'open road' blocks between them, sized honestly. 2) CUSTODY HANDOFF (2 taps): for each anchor, 'Engage guardian.' The event dims out of ambient view; the reliability receipt increments its 'watching' state. This is the ritual that converts 5 dead pre-appointment hours into usable time. 3) OPEN ROAD (passive): during green blocks the app is silent except an optional glanceable countdown widget ('2h10 safe'). Nothing to check, log, or groom. 4) T-MINUS LADDER (deterministic): prep-start nudge with novel LLM wording \u2192 full-screen takeover with a sound it has never used before \u2192 real phone call through silent mode at leave-by. Post-event: receipt increments ('48/48'). 5) FOCUS EXIT (when armed/detected): hourly time-anchors ('3 hours elapsed; it is getting dark') \u2192 at exit time, 'park the thread' 15-second voice capture \u2192 structured re-entry card appears when the anchor event ends. 6) SILENT CALIBRATION (no user action): geofence logs actual departure, session logs actual duration; the error model updates and tomorrow's leave-by shifts. Once a week, one sentence of proof: 'You said 5 minutes; your last 9 trips took 18-24. I have been padding accordingly.' The loop has zero daily obligations \u2014 it fires only when the calendar has an anchor, so a week of ignoring it leaves nothing overdue, broken, or red.",
+ "why_ai_is_essential": "Four load-bearing AI functions, each impossible pre-LLM: (1) TRUE-COST DECOMPOSITION \u2014 turning an arbitrary calendar string ('Dentist 3pm', 'Pick up Sam from soccer') into task-specific prep steps and durations requires open-world commonsense inference; rule-based apps make the user enter prep time manually, i.e., they trust the exact faculty that is broken (the ADDitude 5-vs-20-minute quote is a self-estimate failure). (2) ANTI-HABITUATION WORDING ENGINE \u2014 LLM-generated, never-repeating nudge copy in a chosen voice, driven by a bandit over channel/sound/timing/phrasing. Habituation to identical alarm stimuli is the documented death of every reminder system ('invisible within weeks, sometimes days'); infinite non-repeating variation was not manufacturable before generative models. (3) THREAD PARKING \u2014 converting a 15-second rambling voice dump mid-hyperfocus into a structured re-entry card is speech-to-structured-intent, pure LLM territory, and it is the feature the skeptic confirmed nobody has ('context-preserving exit... no found product does either'). (4) NARRATED CALIBRATION \u2014 a statistical error model only changes behavior if the user believes it; the LLM converts a distribution into one disarming, personal sentence. What breaks without AI: strip the LLM and Pacenote degrades into exactly Tiimo-plus-Twilio \u2014 another self-configured timer the user must estimate for, habituates to, and abandons; the entire differentiated surface (prep inference, novelty, thread capture, believable correction) is generative. The deterministic escalation ladder alone is 2015 technology; that's why it never worked as a product \u2014 it punished users with a screaming inflexible alarm for plans the user had mis-estimated in the first place.",
+ "non_ai_features": [
+  "The escalation ladder itself is deterministic, hard-coded state machine logic \u2014 an LLM never decides WHETHER to fire a wake step or place the call. The product's entire value rests on '48/48 handoffs'; a stochastic model in the firing path would make the trust guarantee a lie. AI writes the words; a cron-grade scheduler pulls the trigger.",
+  "The reliability receipt is plain arithmetic (engaged anchors vs. on-time handoffs), locally computed and auditable in-app. Trust receipts must be boring.",
+  "The phone-call channel (Twilio) is dumb by design: it rings, plays a short recorded line, requires a keypress to acknowledge, and re-rings if unacknowledged. No conversation, no cleverness, no failure modes.",
+  "Geofenced departure logging and screen-session detection are raw deterministic sensing \u2014 the calibration model consumes their output, but the capture layer never interprets.",
+  "The day-horizon bar and countdown widget are static rendering of computed times, deliberately spartan \u2014 the visual timer category is saturated (Tiimo, Time Timer, TimeSee) and we refuse to compete on countdown UI.",
+  "The amnesty/pause button and billing auto-pause are rule-based: one tap suspends all guardianship and billing with no AI-judged friction, no exit interview, no win-back model."
+ ],
+ "anti_habituation_design": "Cluster 2 kills tools via four mechanisms; Pacenote has a concrete counter for each. (1) ALARM HABITUATION \u2192 three-layer defense: a Duolingo-style sleeping-bandit (the published KDD 2020 approach) selects across channel \u00d7 sound \u00d7 timing \u00d7 wording and self-silences arms the user ignores; LLM copy never repeats verbatim; and the ladder terminates in a channel that physiologically cannot habituate silently \u2014 an actual ringing phone call requiring a keypress, which also cannot be reflex-swiped like a notification. Ignore-detection is explicit: if Maya swipes three prep nudges in a week, Pacenote says 'these aren't landing \u2014 switching you to calls-only for anchors' instead of shouting louder into the void. (2) NOVELTY CLIFF / SETUP COLLAPSE \u2192 there is nothing to set up or maintain: no task list, no projects, no tags. The only inventory is the calendar Maya already keeps for her job. Onboarding is: connect calendar, verify phone number, engage first anchor \u2014 under 3 minutes. Crucially, the value curve is inverted: the personal error model is fed by passive geofence/session data from day one, so the product is objectively better at week 6 than week 1 \u2014 the moment every other tool goes stale is the moment Pacenote's corrections start being eerily right, and the weekly one-sentence proof ('padding your estimates by 14 min \u2014 you've been on time 9 of 9') makes the compounding visible. (3) SHAME SPIRAL / BROKEN STREAK \u2192 structurally impossible: usage is event-driven, not streak-driven. There are no streaks, no overdue counters, no red badges. If Maya ignores Pacenote for three weeks, reopening shows exactly two things: her intact lifetime receipt ('31/31') and today's horizon. Lapsing leaves no debris, so re-onboarding requires no courage. (4) THE TOOL BECOMING A TASK \u2192 the daily obligation is 40 seconds of reading plus two taps, and even skipping that costs nothing \u2014 guardianship auto-engages for calendar events matching learned anchor patterns. The week-6 test, concretely: by week 6 Maya has ~15 receipts, a calibrated leave-late correction, and at least one story where the phone rang while she was genuinely absorbed and she made the appointment anyway. That story \u2014 'I stopped guarding the clock and it caught me' \u2014 is the retention event, and it is also the mechanism the waiting-mode root cause says restores the lost hours.",
+ "competitors": [
+  {
+   "name": "Tiimo",
+   "url": "https://www.tiimoapp.com/resource-hub/stuck-in-waiting-mode-adhd-tips",
+   "gap": "Apple's 2025 App of the Year, explicitly content-markets against waiting mode \u2014 but everything is a self-configured visual timer built on the user's own estimates. The skeptic's verdict names the hole exactly: 'all are self-set alarms/timers, which the root-cause analysis says users distrust... no product occupies the trusted external time-guardian wedge.' Tiimo makes time visible; it does not take custody of it."
+  },
+  {
+   "name": "BugMe",
+   "url": "https://trybugme.com/",
+   "gap": "12-tier escalating screen-takeover alarm for breaking hyperfocus (launched July 2026) \u2014 proof of demand for unignorable escalation. But it is a single-moment alarm the user must remember to set, with no whole-day model, no waiting-mode custody ritual, no automatic focus-hole detection, no thread parking, and no learning loop. It's our ladder without our co-driver."
+  },
+  {
+   "name": "Llama Life",
+   "url": "https://apps.apple.com/us/app/llama-life-adhd-routine-task/id6454469750",
+   "gap": "Tracks planned-vs-actual with a Count Overtime feature 'to help you understand where you might be over- or under-estimating' \u2014 then hands the user a chart and walks away. It requires diligent manual timer use (the broken faculty) and never auto-corrects future plans. Pacenote closes the loop Llama Life only displays."
+  },
+  {
+   "name": "Google/Apple 'Time to Leave'",
+   "url": "https://support.google.com/maps/answer/6149565",
+   "gap": "Free, ubiquitous, corrects for observed traffic \u2014 the reason we don't pitch travel-time correction as the product. But it corrects the road, not the person: no prep-step inference, no personal leave-late error model, a single easily-swiped notification with no escalation, no receipt of reliability, and nothing for waiting mode or hyperfocus."
+  },
+  {
+   "name": "Motion / Reclaim.ai",
+   "url": "https://www.usemotion.com/",
+   "gap": "AI auto-schedulers built on user-supplied duration estimates \u2014 garbage-in for time-blind users \u2014 with maintenance-heavy task inventories that are exactly the two-week-collapse pattern from Cluster 2. Neurotypical productivity maximizers, not a time-sense prosthetic."
+  },
+  {
+   "name": "Time Timer / TimeSee",
+   "url": "https://apps.apple.com/us/app/timesee-visual-timer-for-adhd/id6759831241",
+   "gap": "Visual countdown hardware/apps: make remaining time visible if the user sets them, looks at them, and trusts them. No custody, no escalation, no learning, no exit staging. We deliberately cede the countdown-UI category to them."
+  }
+ ],
+ "business_model": "$9/month or $72/year, 30-day full trial with NO card required (a card-first trial is itself an ADHD tax \u2014 Cluster 2 documents 'gamification novelty decays in 4-8 weeks while annual billing continues'). The anti-ADHD-tax architecture is a product feature and the marketing story: (1) BILLING AUTO-PAUSE \u2014 if no anchor has been engaged for 45 days, billing pauses itself and emails 'You're not using Pacenote, so you're not paying for it. Your receipts (31/31) are safe whenever you return.' This converts Cluster 2's abandonment cliff from silent revenue extraction into the single most screenshot-shareable trust move in the category. (2) One-tap in-app cancel, no exit survey, no retention flow. (3) No-questions refund on any renewal within 60 days. (4) Annual is offered, never pushed, and emails you 7 days before renewing. A product whose entire thesis is 'trust me with your appointments' cannot bill like a gym; monetizing forgetfulness would falsify the brand. Unit economics hold because the marginal cost is small: LLM calls are short (brief generation, prep inference, nudge copy) and Twilio calls cost ~$0.02 each with a realistic 1-3 calls/day ceiling \u2014 comfortably inside $9/mo gross margin. Wedge market: even 25k subscribers of the 15.5M diagnosed US adults (CDC) is a $2.7M ARR business for a 2-3 person team, in an ADHD-app market at ~$1.9B growing 12-17% CAGR with no dominant winner.",
+ "month_one_scope": "SHIPS IN 30 DAYS (2 engineers + 1 designer/founder, single platform first \u2014 Android, because passive session-sensing and full-screen takeover are unrestricted there): Google Calendar read sync; morning brief with LLM true-cost decomposition (prep steps + Google Maps travel + fixed default buffer); custody handoff ritual with quiet-calendar event dimming; the full deterministic escalation ladder including Twilio phone call with keypress-acknowledge and re-ring; reliability receipt; day-1 instrumentation of planned-vs-actual (geofenced departures, notification response latency, session lengths); billing auto-pause logic; amnesty button. That is a complete, honest product for waiting mode + lateness \u2014 the two highest-confidence clusters \u2014 and every piece is proven tech (calendar API, FCM, Twilio, one LLM prompt family). DELIBERATELY LATER: personal error-model corrections go live month 2 (they need 3-4 weeks of the data month 1 starts collecting \u2014 shipping 'calibration' before it has data would be theater); thread-parking voice capture month 2; passive hyperfocus-hole detection month 2 on Android, month 3 on iOS via user-armed focus sessions only (Screen Time API limits make passive iOS detection dishonest to promise); iOS app month 3; bedtime guardian and partner/household features quarter 2. The month-1 cut line is principled: ship the trust engine first, because receipts take calendar-time to accumulate and the error model takes data-time to converge \u2014 both clocks must start at launch.",
+ "riskiest_assumptions": [
+  "THE MECHANISM BET: waiting mode has zero formal research (The Conversation, verbatim-confirmed) and the dataset flags two competing causal stories \u2014 distrust of one's own alarms vs. attentional dominance of the upcoming event. Pacenote hedges by attacking both (receipts + escalation for trust; custody ritual + event-dimming for salience), but if pre-event paralysis persists even when the alarm is guaranteed, the flagship 'hands your hours back' claim collapses to a nice leave-on-time app. Testable in week 1 of beta: do users self-report starting tasks in guarded pre-anchor windows?",
+  "THE INTRUSION TOLERANCE BET: the terminal channel is a real phone call. If users disable it after one embarrassing ring in a meeting, the ladder loses its non-habituable floor and the trust guarantee with it. Mitigation (context-aware suppression rules) is in tension with the guarantee itself.",
+  "THE ZERO-MISS BET: receipts assume near-perfect delivery. Dead battery, DND edge cases, or an FCM delay causing even one missed anchor damages trust super-linearly \u2014 the exact past-miss trauma that created the distrust we're trying to repair. Requires redundant channels (SMS + call + push) and an honest 'delivery confirmed' architecture from day one.",
+  "THE COLD-START-VS-CLIFF RACE: the compounding error model is the anti-abandonment story, but it needs 3-4 weeks of data \u2014 meaning the retention asset matures exactly when the novelty cliff hits. Month one must retain on receipts and relief alone.",
+  "THE FREE-ALTERNATIVE SQUEEZE: Google/Apple give away travel-time alerts; a skeptic will say the paid delta is 'a phone call and a story.' The bet is that custody + calibration + receipts is a categorically different product, not a premium notification \u2014 if users can't feel that difference in the trial month, willingness-to-pay dies.",
+  "THE PLATFORM BET: full-screen takeover, reliable scheduled escalation, and passive session detection are all constrained on iOS, where the target demographic disproportionately lives. Android-first is right for capability but may be wrong for the customer; the iOS version must fake nothing it can't guarantee."
+ ],
+ "evidence_citations": [
+  {
+   "claim": "Waiting mode: ADHD adults are 'unable to do anything productive in the hours or days leading up to an important appointment'; 'An appointment at 4 p.m. doesn't feel like a 4 p.m. commitment; it feels like a day-long obligation.'",
+   "url": "https://www.healthline.com/health/adhd/adhd-waiting-mode"
+  },
+  {
+   "claim": "'There currently is no research that specifically examines waiting mode' \u2014 the phenomenon is real, viral, and scientifically unclaimed (verbatim-confirmed by skeptic).",
+   "url": "https://theconversation.com/do-you-lose-your-whole-day-to-one-appointment-waiting-mode-may-be-why-280608"
+  },
+  {
+   "claim": "Root cause of waiting mode per community testimony: fear of hyperfocusing through one's own alarm, overcompensating 'for past experiences where your forgetfulness exposed you' (caption verbatim-confirmed).",
+   "url": "https://www.tiktok.com/@adhdvision/video/7314322691345943841"
+  },
+  {
+   "claim": "Time blindness in both directions: 'It'll take about five minutes to get there... or closer to 20 minutes' and postponing a 2-minute task believed to take 20 (both reader quotes verbatim-confirmed).",
+   "url": "https://www.additudemag.com/time-blindness-running-late-adhd/"
+  },
+  {
+   "claim": "ADHD patients are 60-90% more likely to miss doctor appointments than the general population (3-year study, 136 GP practices).",
+   "url": "https://www.medscape.com/viewarticle/973879"
+  },
+  {
+   "claim": "Hyperfocus episodes last hours to days; 68% of ADHD participants reported frequent hyperfocus (n=50 \u2014 directionally corroborated but cited here with its small-sample caveat per skeptic).",
+   "url": "https://www.cambridge.org/core/journals/european-psychiatry/article/hyperfocus-in-adhd-a-misunderstood-cognitive-phenomenon/1DE44A25A69E8CE17FBC720D26AC2230"
+  },
+  {
+   "claim": "First-person hyperfocus time-loss: '5 hours had passed and it was dark... like coming out of a trance' (verbatim-confirmed, reader Charlotte).",
+   "url": "https://www.additudemag.com/hyperfixation-adhd-stories/"
+  },
+  {
+   "claim": "OS-level limits are trivially escaped: Screen Time lets users ignore limits 'for 1 minute, 15 minutes, or the entire day' \u2014 why deterministic escalation must end off-screen.",
+   "url": "https://www.airdroid.com/ios-parental/screen-time-app-limits-not-working/"
+  },
+  {
+   "claim": "Median 70% of health-app users abandon within 100 days (n=525,824) \u2014 the cliff Pacenote's event-driven, streak-free, compounding design is built against.",
+   "url": "https://www.jmir.org/2024/1/e56897"
+  },
+  {
+   "claim": "Alarm habituation: identical tones become 'invisible within weeks, sometimes days' for ADHD users (vendor-sourced, treated as directional only \u2014 hence bandit + non-repeating copy + phone-call floor).",
+   "url": "https://affine.pro/blog/setting-effective-reminders-adhd"
+  },
+  {
+   "claim": "Duolingo's published sleeping-bandit notification system detects ignored reminders, adapts, and self-silences \u2014 the proven template for Pacenote's ignore-detection engine.",
+   "url": "https://research.duolingo.com/papers/yancey.kdd20.pdf"
+  },
+  {
+   "claim": "Target cohort: new ADHD diagnoses among women 23-49 nearly doubled from 2020 to 2022.",
+   "url": "https://www.epicresearch.org/articles/number-of-adhd-patients-rising-especially-among-women/"
+  },
+  {
+   "claim": "Market: 15.5M US adults (6.0%) with a current ADHD diagnosis.",
+   "url": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7340a1.htm"
+  },
+  {
+   "claim": "ADHD apps market ~$1.9B in 2025, growing 12-17% CAGR, no dominant winner.",
+   "url": "https://www.grandviewresearch.com/industry-analysis/adhd-apps-market-report"
+  },
+  {
+   "claim": "Nearest competitor evidence: Tiimo explicitly markets against waiting mode with self-set visual timers \u2014 the custody/trust wedge remains open per skeptic verdict.",
+   "url": "https://www.tiimoapp.com/resource-hub/stuck-in-waiting-mode-adhd-tips"
+  },
+  {
+   "claim": "Escalating-alarm demand signal: BugMe's 12-tier screen-takeover alarm for breaking hyperfocus (launched July 2026) \u2014 validates the ladder, lacks the co-driver.",
+   "url": "https://trybugme.com/"
+  },
+  {
+   "claim": "Llama Life surfaces planned-vs-actual overtime data but never auto-corrects plans \u2014 the open closed-loop calibration sliver named by the time-blindness skeptic.",
+   "url": "https://apps.apple.com/us/app/llama-life-adhd-routine-task/id6454469750"
+  }
+ ],
+ "why_i_win": "Every rival thesis builds where the skeptics said the field is already occupied or the month-one build is impossible. The initiation team must displace Dubbii (500k users) and Focusmate in a category the skeptic downgraded from 9 to ~5-6 underserved, with 'mixed' efficacy evidence. The life-admin/ADHD-tax team needs bank integrations, act-on-my-behalf trust, and phone-call automation that cannot responsibly ship in 30 days. The communication team fights Slack/Gmail platform gatekeeping plus Rewind-grade privacy objections. A meta-problem team has a design principle, not a product. Temporal holds the three highest-confidence surviving verdicts in the dataset \u2014 waiting mode and hyperfocus exit both at 0.75, the top scores the skeptics awarded \u2014 with the open wedges named in the skeptics' own words: 'no product occupies the trusted external time-guardian wedge,' 'automatic detection of a multi-hour focus session combined with context-preserving exit \u2014 no found product does either,' and the closed-loop personal estimate-error learner that Llama Life displays but doesn't act on. One product covers all three because they are one deficit: no internal time sense. The build is honest month-one tech (calendar API + notifications + Twilio + one LLM prompt family \u2014 no bank, no email scraping, no hardware). And the Cluster 2 meta-killer is answered structurally, not rhetorically: no streaks to break, no inventory to groom, an error model that makes week 6 better than week 1, and a receipt counter that converts reliability into the one currency ADHD users have never been given by their own tools \u2014 trust. Where every other thesis asks the user to do something, Pacenote's pitch is the opposite and therefore survives the user's worst days: stop watching the clock; I've got it."
+}
